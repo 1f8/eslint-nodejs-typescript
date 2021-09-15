@@ -45,7 +45,7 @@ module.exports = {
 
     // Generally styling
     'comma-dangle': [
-      'error', 'only-multiline',
+      0, 'always-multiline',
     ],
     quotes: [2, 'single', 'avoid-escape'],
     semi: [2, 'never']

@@ -1,6 +1,6 @@
 {
   "name": "@1f8/eslint-config-typescript-nodejs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "1F8 NodeJS Typescript Linter for Backend",
   "main": "index.js",
   "repository": {
