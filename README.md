@@ -7,29 +7,34 @@ Don't believe there's any correct way, but this way fits our style.
 
 ### Instructions
 
+This package needs Node.js (^18.18.0, ^20.9.0, or >=21.1.0)
+Uses Eslint ^9.16.0
+
 ```
 yarn add -D @1f8/eslint-config-typescript-nodejs
 npx install-peerdeps --dev @1f8/eslint-config-typescript-nodejs --yarn
-cp node_modules/@1f8/eslint-config-typescript-nodejs/next.eslintrc.js .eslintrc.js
+cp node_modules/@1f8/eslint-config-typescript-nodejs/next.eslintrc.js eslint.config.js
 ```
 
 You can add these scripts in to lint
 
 ```json
 "scripts": {
-  "lint": "eslint --ignore-path .gitignore --ext ts .",
-  "lint:fix": "eslint --ignore-path .gitignore --ext ts . --fix",
+  "lint": "eslint --ignore-pattern .gitignore",
+  "lint:fix": "eslint --ignore-pattern .gitignore --fix",
 }
 ```
 
-You can overwrite rules to fit your needs by changing the eslintfile
-```json
-{
-  "extends": [
-    "@1f8/eslint-config-typescript-nodejs"
-  ],
-  "rules": {
-    "no-console": false,
+You can overwrite rules to fit your needs by changing the eslint.config.js
+```js
+import f8eslintConfigTypescriptNodeJS from '@1f8/eslint-config-typescript-nodejs'
+
+export default [
+  f8eslintConfigTypescriptNodeJS,
+  {
+    rules: {
+      'no-console': 'off',
+    }
   }
-}
+]
 ```
